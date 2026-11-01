@@ -21,7 +21,7 @@ Cukup gunakan satu file utama sesuai jenis Tugas Akhir Anda. Ketentuan mengenai 
 
 ## Cara menggunakan template
 
-**Menggunakan Overleaf (disarankan untuk pemula)**
+**Menggunakan Overleaf**
 
 1. Klik **Code → Download ZIP** pada halaman repository ini.
 2. Buka [Overleaf](https://www.overleaf.com/), lalu masuk ke akun Anda.
