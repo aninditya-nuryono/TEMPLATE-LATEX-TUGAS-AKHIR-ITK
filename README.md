@@ -25,7 +25,7 @@ Cukup gunakan satu file utama sesuai jenis Tugas Akhir Anda. Ketentuan mengenai 
 2. Buka [Overleaf](https://www.overleaf.com/), lalu masuk ke akun Anda.
 3. Pilih **New Project → Upload Project** dan unggah file ZIP tadi.
 4. Buka **Menu → Main document**, lalu pilih file `.tex` sesuai jenis Tugas Akhir.
-5. Klik **Recompile**. Jika PDF sudah muncul, Anda bisa mulai mengganti isi contoh dengan naskah sendiri.
+5. Klik **Recompile**. 
 
 **Menggunakan komputer sendiri**
 
