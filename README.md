@@ -8,14 +8,12 @@ Jika baru pertama kali menggunakan LaTeX, silakan baca [Panduan Penggunaan untuk
 
 ## Pilih template sesuai jenis Tugas Akhir
 
-| Jenis Tugas Akhir | File LaTeX | Contoh hasil PDF |
-| --- | --- | --- |
-| Skripsi | [`main_skripsi.tex`](main_skripsi.tex) | [Lihat PDF](main_skripsi.pdf) |
-| Proyek | [`main_proyek.tex`](main_proyek.tex) | [Lihat PDF](main_proyek.pdf) |
-| Prototipe | [`main_prototipe.tex`](main_prototipe.tex) | [Lihat PDF](main_prototipe.pdf) |
-| Artikel Ilmiah | [`main_artikel_ilmiah.tex`](main_artikel_ilmiah.tex) | Belum tersedia |
-
-PDF pada tabel hanya untuk melihat contoh tampilan. Untuk menulis atau mengubah isi dokumen, gunakan file `.tex` yang sesuai.
+| Jenis Tugas Akhir | File LaTeX |
+| --- | --- |
+| Skripsi | [`main_skripsi.tex`](main_skripsi.tex) |
+| Proyek | [`main_proyek.tex`](main_proyek.tex) |
+| Prototipe | [`main_prototipe.tex`](main_prototipe.tex) |
+| Artikel Ilmiah | [`main_artikel_ilmiah.tex`](main_artikel_ilmiah.tex) |
 
 Cukup gunakan satu file utama sesuai jenis Tugas Akhir Anda. Ketentuan mengenai pilihan jenis Tugas Akhir tetap mengikuti aturan program studi.
 
