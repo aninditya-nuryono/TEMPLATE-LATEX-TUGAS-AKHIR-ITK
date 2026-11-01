@@ -201,12 +201,12 @@
 
 % ============================================================================
 % PENGATURAN HEADER DAN FOOTER (Bab 3.1.g & Bab 3.4)
-% Header: "Skripsi/Proyek/Prototipe Program Studi ....."
+% Header: dikosongkan pada seluruh halaman
 % Footer: Nomor halaman di kanan bawah kertas (1.5 cm dari tepi bawah)
 % ============================================================================
 \fancypagestyle{plain}{%
   \fancyhf{}
-  \fancyhead[L]{\small\itshape \@jenistacamel\ Program Studi \@prodi}
+  % Header kiri sengaja dikosongkan.
   \fancyfoot[R]{\thepage}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -214,7 +214,7 @@
 
 \fancypagestyle{itkmain}{%
   \fancyhf{}
-  \fancyhead[L]{\small\itshape \@jenistacamel\ Program Studi \@prodi}
+  % Header kiri sengaja dikosongkan.
   \fancyfoot[R]{\thepage}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -789,13 +789,14 @@
   \clearpage
   \nowatermarkthispage
   \thispagestyle{empty}
-  \mbox{}%
+  % Background gambar dipasang pada lapisan halaman, bukan node TikZ.
+  % Menghindari clipping gambar di bawah kotak teks overlay.
+  \IfFileExists{images/cover_bg_4.png}{%
+    \AddToShipoutPictureBG*{\AtPageCenter{\makebox(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{images/cover_bg_4.png}}}}%
+  }{}
+  \AddToShipoutPictureBG*{\AtPageCenter{%
   \begin{tikzpicture}[remember picture, overlay]
-    \IfFileExists{images/cover_bg_4.png}{%
-      \node[inner sep=0pt] at (current page.center) {%
-        \includegraphics[width=\paperwidth,height=\paperheight]{images/cover_bg_4.png}%
-      };
-    }{%
+    \IfFileExists{images/cover_bg_4.png}{}{%
       \fill[itkblue] ([xshift=-0.75cm]current page.north) rectangle ([xshift=0.75cm,yshift=-2.09cm]current page.north);
       \fill[itkgold] ([xshift=-0.75cm,yshift=-7.47cm]current page.north) rectangle ([xshift=0.75cm,yshift=-8.2cm]current page.north);
       \fill[itkblue] ([xshift=-0.75cm,yshift=-8.2cm]current page.north) rectangle ([xshift=0.75cm]current page.south);
@@ -821,7 +822,9 @@
       \fontfamily{phv}\selectfont\singlespacing
       \fontsize{8.5pt}{10pt}\selectfont\bfseries \@kodefakultas\ -- \@tahun%
     };
-  \end{tikzpicture}
+  \end{tikzpicture}%
+  }}%
+  \mbox{}%
   \clearpage
 }
 \endinput

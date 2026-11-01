@@ -1,32 +1,21 @@
-# Misi Pertama: Menulis Tugas Akhir ITK dengan LaTeX
+# Panduan Penggunaan Template LaTeX Tugas Akhir ITK
 
-**Panduan praktik dari nol — khusus mahasiswa Institut Teknologi Kalimantan.**
+Panduan ini ditujukan untuk mahasiswa ITK yang ingin menggunakan template Tugas Akhir, termasuk yang belum pernah memakai LaTeX. Tidak semua perintah perlu dipahami sekaligus. Mulailah dengan membuka template, mencoba kompilasi, lalu mengubah isinya sedikit demi sedikit.
 
-Tidak perlu mempelajari semua perintah LaTeX. Target pertama Anda sederhana: **membuka template, menghasilkan PDF, lalu mengganti satu bagian tanpa merusak format**.
+## 1. Sebelum mulai
 
-## Peta perjalanan
+Ada empat file utama di dalam paket:
 
-| Tahap | Misi | Bukti berhasil |
-|---|---|---|
-| 0 | Pilih jenis Tugas Akhir | Mengetahui file utama |
-| 1 | Buka proyek di Overleaf | Semua file terlihat |
-| 2 | Buat PDF pertama | Hasil kompilasi tampil |
-| 3 | Ganti identitas dan judul | Perubahan muncul di PDF |
-| 4 | Menulis satu subbab | Teks dan penomoran tampil |
-| 5 | Tambahkan gambar, tabel, persamaan | Objek muncul dan dapat dirujuk |
-| 6 | Tambahkan referensi | Sitasi dan daftar pustaka terbentuk |
-| 7 | Periksa naskah sebelum dikirim | Tidak ada error atau data contoh tertinggal |
-
-## Misi 0 — Tentukan jalur TA
-
-| Jenis dokumen | File utama |
-|---|---|
+| Jenis Tugas Akhir | File yang digunakan |
+| --- | --- |
 | Skripsi | `main_skripsi.tex` |
 | Proyek | `main_proyek.tex` |
 | Prototipe | `main_prototipe.tex` |
 | Artikel Ilmiah | `main_artikel_ilmiah.tex` |
 
-Untuk Skripsi, Proyek, dan Prototipe, kelas `itkta2025.cls` mendukung tahapan `proposal`, `revisiproposal`, dan `laporan`. Contohnya:
+Pilih satu file sesuai jenis Tugas Akhir Anda. File lainnya boleh tetap berada di proyek, tetapi tidak perlu diedit.
+
+Untuk Skripsi, Proyek, dan Prototipe, tahap dokumen dapat diatur melalui pilihan `proposal`, `revisiproposal`, atau `laporan` pada `\documentclass`. Contoh untuk proposal Skripsi:
 
 ```latex
 \documentclass[skripsi,proposal]{itkta2025}
@@ -38,52 +27,63 @@ Untuk laporan akhir Skripsi:
 \documentclass[skripsi,laporan]{itkta2025}
 ```
 
-**Jangan mengubah opsi kelas artikel ilmiah mengikuti contoh di atas tanpa memeriksa file aslinya.** Artikel ilmiah mempunyai file utama tersendiri.
+Pengaturan Artikel Ilmiah berbeda. Gunakan pengaturan yang sudah tersedia pada `main_artikel_ilmiah.tex`.
 
-## Misi 1 — Masuk Overleaf tanpa instalasi
+## 2. Cara paling mudah: menggunakan Overleaf
 
-1. Buka https://www.overleaf.com dan masuk atau buat akun.
-2. Pilih **New Project → Upload Project**.
-3. Unggah file ZIP paket lengkap ini.
-4. Buka **Menu → Main document** dan pilih file `main_*.tex` sesuai jalur TA.
-5. Pastikan file `itkta2025.cls`, `itkharvard.bst`, `referensi.bib`, dan folder `images/` ikut terunggah.
+Overleaf dapat digunakan melalui browser, jadi Anda tidak perlu memasang aplikasi LaTeX terlebih dahulu.
 
-**Penting:** Bila paket memuat empat file utama, Overleaf tidak otomatis tahu file mana yang ingin Anda kompilasi. Pilihan **Main document** menentukan hasilnya.
+1. Unduh ZIP template dari repository GitHub.
+2. Buka [Overleaf](https://www.overleaf.com/) dan masuk ke akun Anda.
+3. Pilih **New Project → Upload Project**, lalu unggah ZIP tersebut.
+4. Setelah proyek terbuka, pilih **Menu → Main document**.
+5. Pilih file utama sesuai jenis Tugas Akhir Anda.
+6. Klik **Recompile** untuk membuat PDF.
 
-## Misi 2 — PDF pertama, sebelum menulis
+Jika PDF berhasil dibuat, jangan langsung menghapus seluruh isi contoh. Coba ubah judul atau nama mahasiswa terlebih dahulu, kemudian kompilasi ulang. Setelah itu, barulah lanjutkan mengubah bagian lainnya.
 
-Klik **Recompile**. Jangan langsung menghapus seluruh isi contoh. Pertama, pastikan proyek awal menghasilkan PDF. Jika kompilasi gagal, buka log error dan baca pesan pertama yang relevan.
+## 3. Menggunakan TeXstudio di Windows
 
-Perhatikan: daftar pustaka mungkin memerlukan pemrosesan BibTeX. Hasil PDF contoh yang disertakan adalah pembanding visual, bukan pengganti pengujian kompilasi di komputer Anda.
+Jika ingin menulis tanpa koneksi internet, Anda dapat menggunakan MiKTeX dan TeXstudio.
 
-## Misi 3 — Ubah satu hal, lalu cek PDF
+1. Instal [MiKTeX](https://miktex.org/download).
+2. Instal [TeXstudio](https://www.texstudio.org/).
+3. Ekstrak ZIP template ke folder yang mudah ditemukan.
+4. Buka file utama melalui TeXstudio.
+5. Pilih PDFLaTeX sebagai compiler, lalu jalankan kompilasi.
 
-Cari bagian identitas dan judul dalam file utama, kemudian ganti **teks contoh** saja. Klik **Recompile**.
+Untuk memperbarui daftar pustaka berbasis BibTeX, jalankan PDFLaTeX → BibTeX → PDFLaTeX → PDFLaTeX. Pada instalasi tertentu, MiKTeX mungkin meminta izin memasang paket LaTeX tambahan.
 
-**Aturan aman:**
-- Teks biasa dapat diganti.
-- Perintah yang diawali `\` jangan dihapus bila belum dipahami.
-- Tanda `{...}` dan `[...]` sering merupakan bagian dari sintaks.
-- Tanda `%` memulai komentar hingga akhir baris.
-- Simpan salinan proyek sebelum mengubah format.
+## 4. Mengenal bagian yang boleh diubah
 
-## Misi 4 — Menulis isi tanpa mengatur margin manual
+Sebagian besar pekerjaan Anda dilakukan di `main_*.tex`. Di dalamnya terdapat identitas, judul, abstrak, bab, dan bagian lain sesuai jenis Tugas Akhir.
 
-Untuk dokumen bab, pola umum penulisan adalah:
+Saat mengedit, perhatikan beberapa hal berikut:
+
+- Perintah LaTeX biasanya diawali tanda `\`, misalnya `\section`.
+- Kurung kurawal `{...}` menunjukkan isi atau argumen suatu perintah.
+- Tanda `%` digunakan untuk komentar pada baris kode.
+- Nama file dan lokasi gambar harus sesuai dengan yang ditulis pada kode.
+
+Untuk penulisan biasa, **tidak perlu mengubah `itkta2025.cls`**. File tersebut mengatur tampilan dokumen. Jika ada format yang dirasa tidak sesuai, periksa dulu pedoman TA ITK sebelum mengubahnya.
+
+## 5. Menulis bab dan subbab
+
+Contoh penulisan judul bab dan subbab:
 
 ```latex
 \chapter{PENDAHULUAN}
 \section{Latar Belakang}
-\subsection{Permasalahan}
+\subsection{Rumusan Masalah}
 ```
 
-Tulis paragraf setelah judul bagian. Biarkan kelas `itkta2025.cls` menangani tata letak. **Jangan membuat jarak dengan menekan Enter berulang-ulang atau menambahkan `\vspace` untuk mengejar tampilan.**
+Setelah perintah tersebut, tulis paragraf seperti biasa. Nomor bab dan subbab akan dibuat oleh LaTeX. Anda tidak perlu mengetiknya secara manual.
 
-## Misi 5 — Gambar, tabel, dan persamaan
+Hindari menambah banyak baris kosong atau perintah jarak hanya agar teks terlihat pas di halaman. Sebaiknya biarkan template mengatur tata letaknya.
 
-### Gambar
+## 6. Menambahkan gambar
 
-Letakkan gambar di folder `images/`, misalnya `images/diagram_penelitian.png`.
+Simpan gambar di folder `images/`, misalnya `images/diagram_penelitian.png`. Contoh penggunaannya:
 
 ```latex
 \begin{figure}[htbp]
@@ -94,14 +94,18 @@ Letakkan gambar di folder `images/`, misalnya `images/diagram_penelitian.png`.
 \end{figure}
 ```
 
-Rujuk dengan `Gambar~\ref{fig:diagram}`. Gunakan nama file yang sederhana dan konsisten.
+Untuk menyebut gambar dalam paragraf, gunakan `Gambar~\ref{fig:diagram}`. Nomor gambar akan menyesuaikan secara otomatis.
 
-### Tabel
+Jika gambar tidak muncul, periksa penulisan nama file, ekstensi, serta lokasi foldernya.
+
+## 7. Membuat tabel
+
+Berikut contoh tabel sederhana:
 
 ```latex
 \begin{table}[htbp]
 \centering
-\caption{Contoh hasil pengujian}
+\caption{Hasil pengujian}
 \label{tab:hasil}
 \begin{tabular}{|l|c|}
 \hline
@@ -114,9 +118,11 @@ Pengujian B & 20 \\
 \end{table}
 ```
 
-Rujuk dengan `Tabel~\ref{tab:hasil}`. Untuk tabel lebar atau lintas halaman, **ikuti contoh tabel yang sudah tersedia dalam file utama**, karena template ITK juga menyediakan pola tabel khusus.
+Tabel tersebut dapat dirujuk dengan `Tabel~\ref{tab:hasil}`. Untuk tabel yang lebih lebar atau panjang, lihat contoh tabel yang sudah tersedia dalam template.
 
-### Persamaan
+## 8. Menulis persamaan
+
+Persamaan dapat ditulis menggunakan lingkungan `equation`:
 
 ```latex
 \begin{equation}
@@ -125,11 +131,11 @@ E = mc^2
 \end{equation}
 ```
 
-Rujuk dengan `Persamaan~(\ref{eq:energi})`.
+Jika ingin merujuknya, tulis `Persamaan~(\ref{eq:energi})` dalam paragraf.
 
-## Misi 6 — Referensi tanpa mengetik daftar pustaka manual
+## 9. Mengelola referensi dan sitasi
 
-Buka `referensi.bib`, lalu tambahkan entri BibTeX:
+Daftar referensi disimpan dalam `referensi.bib`. Contoh format entri BibTeX:
 
 ```bibtex
 @article{contoh2026,
@@ -140,56 +146,49 @@ Buka `referensi.bib`, lalu tambahkan entri BibTeX:
 }
 ```
 
-Di naskah, contoh perintah sitasi yang dipakai template:
+Entri tersebut hanya contoh penulisan, **bukan sumber ilmiah untuk digunakan dalam Tugas Akhir**. Ganti dengan referensi yang benar-benar Anda gunakan.
+
+Di dalam naskah, sitasi dapat ditulis seperti berikut:
 
 ```latex
 \citep{contoh2026}
 \citet{contoh2026}
 ```
 
-Contoh di atas adalah **data latihan**, bukan referensi ilmiah yang boleh dipakai sebagai sumber penelitian. Ganti dengan sumber yang benar-benar Anda baca.
+Kata `contoh2026` merupakan kunci referensi. Penulisannya harus sama dengan kunci yang ada di `referensi.bib`.
 
-Jika sitasi tampil `?`, periksa apakah kunci dalam kurung kurawal cocok dengan entri `.bib`. Untuk kompilasi lokal, gunakan urutan **PDFLaTeX → BibTeX → PDFLaTeX → PDFLaTeX**.
+Jika hasil sitasi masih berupa tanda `?`, periksa kuncinya dan jalankan proses BibTeX, kemudian kompilasi ulang.
 
-## Misi 7 — Bekerja offline di Windows 11
+## 10. Jika kompilasi gagal
 
-1. Instal **MiKTeX**: https://miktex.org/download
-2. Instal **TeXstudio**: https://www.texstudio.org/
-3. Ekstrak ZIP ke folder proyek biasa.
-4. Buka file utama pilihan Anda.
-5. Atur compiler PDFLaTeX dan proses bibliografi BibTeX bila dibutuhkan.
-6. Jalankan kompilasi dan periksa hasil PDF.
+Jangan langsung menghapus bagian kode yang ditandai sebagai kesalahan. Pesan error kadang muncul beberapa baris setelah sumber masalah sebenarnya.
 
-Pengguna Linux/macOS dapat memakai distribusi TeX yang sesuai. File `compile.sh` ditujukan untuk lingkungan shell yang mendukungnya; pengguna Windows pemula tidak wajib memakai skrip tersebut.
+| Pesan atau masalah | Langkah pemeriksaan |
+| --- | --- |
+| `Undefined control sequence` | Periksa salah ketik perintah LaTeX atau paket yang diperlukan |
+| `itkta2025.cls not found` | Pastikan file class berada dalam proyek |
+| `File ... not found` | Periksa nama dan lokasi gambar atau file lain |
+| Sitasi tampil `?` | Periksa `referensi.bib` dan jalankan BibTeX |
+| PDF dari jenis TA yang salah | Periksa pilihan **Main document** |
+| Tabel melewati batas halaman | Sesuaikan lebar kolom atau gunakan contoh tabel bawaan |
 
-## Pusat bantuan: kenali gejalanya
+Jika masih belum berhasil, simpan pesan error dan bagian kode yang terkait. Informasi itu akan memudahkan orang lain membantu memeriksanya.
 
-| Gejala | Penyebab yang perlu dicek | Tindakan pertama |
-|---|---|---|
-| PDF dari jenis TA yang salah | Main document keliru | Pilih file utama yang benar |
-| `itkta2025.cls not found` | File class tidak terunggah | Unggah seluruh isi proyek |
-| Gambar tidak tampil | Path/nama gambar berbeda | Periksa `images/` dan kapitalisasi |
-| Sitasi menjadi `?` | Kunci `.bib` salah atau BibTeX belum dijalankan | Cocokkan kunci dan compile ulang |
-| `Undefined control sequence` | Perintah salah ketik atau paket belum tersedia | Baca log di baris terkait |
-| Tabel melewati batas halaman | Tabel terlalu lebar | Gunakan pola tabel bawaan template |
-| Perubahan tidak muncul | File yang diedit bukan main document | Periksa file aktif dan Recompile |
+## 11. Pemeriksaan sebelum dikirim ke pembimbing
 
-## Pemeriksaan akhir sebelum dikirim ke dosen pembimbing
+Sebelum mengirim naskah, sebaiknya periksa kembali:
 
-- [ ] Jenis TA dan tahap dokumen sudah sesuai.
-- [ ] Identitas, judul, pembimbing, dan abstrak sudah benar.
-- [ ] Semua teks contoh yang tidak relevan telah diganti.
-- [ ] Gambar, tabel, dan persamaan dapat dirujuk.
-- [ ] Sitasi dan daftar pustaka tidak menampilkan tanda tanya.
-- [ ] Tidak ada error kompilasi yang menghentikan proses.
-- [ ] PDF dibandingkan dengan **panduan resmi penulisan TA ITK yang berlaku**.
-- [ ] File sumber dan PDF disimpan dengan nama yang mudah dikenali.
-- [ ] Tidak ada data pribadi atau naskah belum publik yang terunggah ke repository publik.
+- [ ] Jenis dan tahap Tugas Akhir sudah sesuai.
+- [ ] Nama mahasiswa, judul, pembimbing, dan identitas lainnya sudah benar.
+- [ ] Teks contoh yang tidak diperlukan sudah diganti.
+- [ ] Gambar, tabel, dan persamaan muncul dengan benar.
+- [ ] Nomor rujukan gambar, tabel, dan persamaan sesuai.
+- [ ] Sitasi dan daftar pustaka sudah tampil.
+- [ ] PDF dapat dibuka dan tidak ada kesalahan kompilasi yang menghentikan proses.
+- [ ] Format dokumen sudah dibandingkan dengan pedoman TA ITK yang berlaku.
 
-## Kapan harus mengubah `itkta2025.cls`?
-
-Hampir tidak pernah untuk pekerjaan penulisan biasa. File tersebut adalah **mesin format**, sedangkan `main_*.tex` adalah **naskah Anda**. Bila hasilnya berbeda dari pedoman ITK, dokumentasikan perbedaannya dahulu sebelum mengubah class.
+Biasakan menyimpan salinan proyek sebelum melakukan perubahan besar. Jika ada kesalahan, Anda dapat kembali ke versi sebelumnya tanpa harus menyusun ulang dokumen.
 
 ---
 
-**Satu kebiasaan terbaik:** tulis sedikit → kompilasi → periksa PDF → lanjutkan. Panduan ini adalah alat bantu belajar, sedangkan persyaratan akademik tetap mengikuti ketentuan resmi ITK.
+Template ini membantu proses penulisan, tetapi **pedoman resmi Tugas Akhir ITK dan ketentuan program studi tetap menjadi acuan utama**.
