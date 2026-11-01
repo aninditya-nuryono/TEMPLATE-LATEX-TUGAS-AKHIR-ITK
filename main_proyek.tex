@@ -1,0 +1,202 @@
+\documentclass[proyek,laporan]{itkta2025}
+
+% ============================================================================
+% KONFIGURASI IDENTITAS TUGAS AKHIR PROYEK
+% ============================================================================
+\judulid{PERANCANGAN ARSITEKTUR SISTEM PEMANTAUAN EMISI KENDARAAN TERINTEGRASI BERBASIS KOMPUTASI TEPI UNTUK KAWASAN PERKOTAAN}
+\judulen{ARCHITECTURAL DESIGN OF AN INTEGRATED EDGE-COMPUTING VEHICLE EMISSION MONITORING SYSTEM FOR URBAN AREAS}
+\penulis{Nama Mahasiswa}
+\nim{11211002}
+\prodi{Teknik Informatika}
+\jurusan{Teknik Elektro, Informatika, dan Bisnis}
+\fakultas{Sains dan Teknologi Informasi}
+\kodefakultas{FSTI}
+\gelar{Sarjana Komputer (S.Kom.)}
+\tanggal{27}
+\bulan{Oktober}
+\tahun{2025}
+
+\pembimbingsatu{Nama Pembimbing Utama, S.T., M.Eng.}{199108292019031001}
+\pembimbingdua{Nama Pembimbing Pendamping, S.Kom., M.Kom.}{199305122020121002}
+\pengujisatu{Nama Penguji I, S.T., M.T.}{198904102018031003}
+\pengujidua{Nama Penguji II, S.Si., M.Cs.}{199407212022032004}
+
+\begin{document}
+
+% ============================================================================
+% BAGIAN AWAL
+% ============================================================================
+\pagenumbering{roman}
+\makecover
+\makeorisinalitas
+\makepublikasi
+\makepengeshan
+% \makepersetujuanproposal % <-- Aktifkan khusus untuk Proposal TA Proyek
+
+\frontchapter{KATA PENGANTAR}
+Puji syukur kepada Tuhan Yang Maha Esa atas rahmat dan karunia-Nya sehingga penulis dapat menyelesaikan Laporan Tugas Akhir berbentuk Proyek dengan judul \textbf{``PERANCANGAN ARSITEKTUR SISTEM PEMANTAUAN EMISI KENDARAAN TERINTEGRASI BERBASIS KOMPUTASI TEPI UNTUK KAWASAN PERKOTAAN''} sebagai salah satu syarat kelulusan memperoleh gelar Sarjana Komputer di Institut Teknologi Kalimantan.
+
+Ucapan terima kasih disampaikan kepada dosen pembimbing utama, dosen pembimbing pendamping, mitra instansi terkait, keluarga, serta rekan-rekan mahasiswa yang telah membantu selama pelaksanaan proyek. Penulis menyadari bahwa karya ini masih memiliki kekurangan, sehingga saran yang membangun sangat diharapkan demi penyempurnaan di masa mendatang.
+
+\vspace{1.2cm}
+\begin{flushright}
+  Balikpapan, Oktober 2025\\[1.5cm]
+  Nama Mahasiswa
+\end{flushright}
+
+\begin{abstrakid}{komputasi tepi, pemantauan emisi, arsitektur sistem, rancangan proyek, kota cerdas}
+Abstrak merupakan ikhtisar suatu tugas akhir yang memuat permasalahan, tujuan, dan metodologi (abstrak proposal TA). Abstrak laporan TA berisi permasalahan, tujuan, metodologi, hasil proyek, kesimpulan, dan rekomendasi. Abstrak dibuat untuk memudahkan pembaca mengerti secara cepat isi tugas akhir untuk memutuskan apakah perlu membaca lebih lanjut atau tidak. Jumlah minimum kata pada abstrak adalah 200 -- 350 kata. Penulisan abstrak hanya pada satu paragraf, diketik dengan tipe font Times New Roman 12 poin dengan spasi tunggal (\textit{line spacing = single}). Setiap penggunaan bahasa asing harus diformat \textit{italic}. Format penulisan harus mengacu pada format ini.
+\end{abstrakid}
+
+\begin{abstraken}{edge computing, emission monitoring, system architecture, project design, smart city}
+Abstract is a summary of a final assignment that contains the problems, objectives, and methodology (abstract of the proposal). The abstract of the report contains the problems, objectives, methodology, project results, conclusions, and recommendations. The abstract is made to make it easier for readers to quickly understand the contents of the final assignment to decide whether to read further or not. The minimum number of words in the abstract is 200 -- 350 words. The abstract is written in only one paragraph, typed in 12-point Times New Roman font with single spacing (line spacing = single). Any use of foreign languages must be formatted in italics.
+\end{abstraken}
+
+\makedaftarisi
+\makedaftargambar
+\makedaftartabel
+
+\begin{daftarnotasi}
+  $x$ & Laju alir data   & $\text{MB/s}$ \\
+  $y$ & Waktu latensi    & $\text{ms}$ \\
+  $z$ & Konsumsi daya    & $\text{watt}$ \\
+\end{daftarnotasi}
+
+% ============================================================================
+% BAGIAN ISI (BENTUK PROYEK)
+% ============================================================================
+\clearpage
+\pagenumbering{arabic}
+
+\chapter{PENDAHULUAN}
+Pada pengantar bab ini merupakan deskripsi singkat dari isi Bab 1 Pendahuluan. Isi Bab 1 Pendahuluan meliputi: latar belakang, rumusan masalah dan/atau obyek yang dirancang, tujuan, batasan proyek, urgensi, relevansi dengan industri atau akademik, serta kerangka penelitian. Jika ada mitra, sertakan perannya.
+
+\section{Latar Belakang}
+Latar belakang tugas akhir berbentuk proyek dimulai dengan pengenalan masalah atau isu yang menjadi dasar dilakukannya proyek. Penulis menjelaskan secara umum apa yang mendorong dilakukannya proyek ini, baik dari segi kebutuhan, permasalahan yang ada, ataupun studi kasus, serta menghubungkannya dengan penelitian atau teori yang relevan \citep{santiago2023, eladio2024}.
+
+\section{Rumusan Masalah dan/atau Obyek yang Dirancang}
+Bagian ini mengidentifikasi permasalahan praktis yang dihadapi oleh industri, masyarakat, atau bidang tertentu serta menjelaskan secara terperinci objek yang dirancang (berupa produk, sistem, aplikasi, alat, atau prosedur baru).
+
+\section{Tujuan}
+Tujuan pada tugas akhir berbentuk proyek disusun dengan jelas dan terukur, mencakup apa yang ingin dicapai melalui proyek tersebut dengan indikator atau metrik keberhasilan yang dapat dievaluasi.
+
+\section{Batasan Proyek}
+Batasan proyek menetapkan ruang lingkup yang jelas dan terfokus pada aspek-aspek tertentu dari proyek, seperti teknologi, metodologi, atau objek yang dikembangkan, serta hal-hal yang tidak termasuk dalam proyek.
+
+\section{Urgensi}
+Urgensi proyek menggambarkan pentingnya proyek dalam konteks masalah yang ada, baik dari segi kebutuhan praktis, inovasi, maupun kontribusinya terhadap perkembangan ilmu pengetahuan dan teknologi.
+
+\section{Relevansi dengan Industri atau Akademik}
+Bagian ini mengidentifikasi relevansi proyek terhadap bidang studi atau industri yang terkait serta menguraikan manfaat nyata yang diharapkan dari pelaksanaan proyek.
+
+\section{Kerangka Penelitian}
+Kerangka penelitian merinci tahapan-tahapan utama yang dilakukan, mulai dari analisis masalah, desain atau pengembangan objek, metode yang digunakan, hingga teknik pengumpulan dan analisis data.
+
+\section{Mitra (Opsional)}
+Bagian ini menjelaskan mitra eksternal yang terlibat (perusahaan, instansi, atau industri), peran mereka dalam proyek, serta kontribusi yang diberikan selama pelaksanaan proyek.
+
+\chapter{METODOLOGI}
+Pada bab ini dipaparkan dan dibandingkan beberapa penelitian, teknologi, dan/atau metode yang mendukung penyelesaian proyek. Jika ada mitra, disertakan standar yang digunakan.
+
+\section{Penelitian/Teknologi/Metode}
+Bagian ini menjelaskan pendekatan yang digunakan untuk melaksanakan proyek, termasuk metode penelitian, teknologi, perangkat lunak, atau perangkat keras yang mendukung pengembangan proyek beserta alasan pemilihannya \citep{santiago2023}.
+
+\section{Standar Mitra (Opsional)}
+Bagian ini mencantumkan standar teknis atau prosedural yang diterapkan oleh mitra dan bagaimana standar tersebut mempengaruhi jalannya proyek serta pencapaian hasil yang diinginkan.
+
+\chapter{RANCANGAN PROYEK}
+Pada bab ini, Rancangan Proyek diuraikan dengan mencakup garis besar proyek, diagram alir atau \textit{flowchart}, prosedur, desain, kebutuhan sumber daya, serta rencana jadwal proyek.
+
+\section{Garis Besar Proyek}
+Bagian ini memberikan gambaran singkat tentang apa yang dilakukan dan hasil maupun luaran yang ingin dicapai dari proyek yang dikerjakan.
+
+\section{Diagram Alir atau Flowchart}
+Diagram alir adalah representasi grafis dari alur kerja, proses, atau langkah-langkah yang dilalui berdasarkan garis besar proyek sebagaimana ditunjukkan pada Gambar~\ref{fig:flowchart_proyek}.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    node distance=0.8cm,
+    box/.style={rectangle, draw=black, thick, minimum width=6.5cm, minimum height=0.8cm, align=center, font=\footnotesize\singlespacing}
+  ]
+    \node[box] (p1) {Analisis Kebutuhan Sistem \& Standar Mitra};
+    \node[box, below=of p1] (p2) {Perancangan Arsitektur \& Spesifikasi Teknis};
+    \node[box, below=of p2] (p3) {Implementasi Modul \& Integrasi Komponen};
+    \node[box, below=of p3] (p4) {Verifikasi Kinerja \& Evaluasi Kelayakan};
+    \draw[-Stealth, thick] (p1) -- (p2);
+    \draw[-Stealth, thick] (p2) -- (p3);
+    \draw[-Stealth, thick] (p3) -- (p4);
+  \end{tikzpicture}
+  \caption{Diagram alir pelaksanaan proyek}
+  \label{fig:flowchart_proyek}
+\end{figure}
+
+\section{Prosedur}
+Prosedur adalah penjelasan teks dari setiap tahapan dalam diagram alir secara rinci, mencakup langkah teknis spesifik, persyaratan operasional, kondisi proses, dan kontrol kualitas.
+
+\section{Desain}
+Bagian ini menjelaskan rancangan teknis atau konseptual proyek secara detail, termasuk spesifikasi desain, diagram sistem, skema, atau \textit{blueprint}.
+
+\section{Sumber Daya}
+Sumber daya yang diperlukan untuk pelaksanaan proyek meliputi:
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Sumber Daya Manusia}: Tim pelaksana, peran, dan keahlian.
+  \item \textbf{Material/Bahan}: Daftar bahan baku, komponen elektronik, atau bahan pendukung lainnya.
+  \item \textbf{Alat dan Perangkat}: Perangkat lunak (\textit{software}), perangkat keras (\textit{hardware}), atau alat laboratorium.
+  \item \textbf{Anggaran}: Rincian biaya per item (opsional, dapat ditempatkan pada lampiran).
+\end{enumerate}
+
+\section{Rencana Jadwal}
+Bagian ini memuat \textit{timeline} pelaksanaan proyek dalam bentuk tabel atau diagram Gantt sebagaimana dicontohkan pada Tabel~\ref{tab:jadwal_proyek} (dicantumkan khusus pada Proposal TA).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Rencana Jadwal Pelaksanaan Proyek}
+  \label{tab:jadwal_proyek}
+  \begin{singlespace}
+  \begin{tabularx}{\textwidth}{@{} c >{\raggedright\arraybackslash}X c c c c @{}}
+    \toprule
+    \textbf{No.} & \textbf{Tahapan Kegiatan} & \textbf{Bulan 1} & \textbf{Bulan 2} & \textbf{Bulan 3} & \textbf{Bulan 4} \\
+    \midrule
+    1 & Perencanaan dan Analisis Kebutuhan & $\checkmark$ &              &              &              \\
+    2 & Pengadaan Bahan dan Perancangan    & $\checkmark$ & $\checkmark$ &              &              \\
+    3 & Implementasi dan Integrasi Sistem  &              & $\checkmark$ & $\checkmark$ &              \\
+    4 & Pengujian dan Penyusunan Laporan   &              &              & $\checkmark$ & $\checkmark$ \\
+    \bottomrule
+  \end{tabularx}
+  \end{singlespace}
+\end{table}
+
+\chapter{HASIL PROYEK}
+Pada bab ini disajikan penyelesaian masalah praktis melalui penerapan metode. Hasil proyek dianalisis dan dievaluasi pencapaiannya, serta jika ada mitra ditambahkan relevansi solusi dengan kebutuhan mitra. Jika independen, pembahasan berfokus pada efektivitas dan inovasi.
+
+\chapter{PENUTUP}
+Pada bab penutup berisi Kesimpulan dan Rekomendasi.
+
+\section{Kesimpulan}
+Kesimpulan merangkum pencapaian proyek dan tingkat keberhasilannya terhadap tujuan yang telah ditetapkan.
+
+\section{Rekomendasi}
+Rekomendasi mencakup saran pengembangan lanjutan, validasi tambahan, atau penerapan pada skala yang lebih luas.
+
+% ============================================================================
+% BAGIAN AKHIR
+% ============================================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+\renewcommand{\bibname}{DAFTAR PUSTAKA}
+\begin{singlespace}
+  \bibliographystyle{itkharvard}
+  \bibliography{referensi}
+\end{singlespace}
+
+\frontchapter{LAMPIRAN A}
+Dokumen spesifikasi teknis tambahan dan rincian anggaran proyek.
+
+\makeriwayatpenulis{%
+\textbf{Nama Mahasiswa} lahir di Balikpapan pada 31 Januari 2003. Pada tahun 2021 terdaftar sebagai mahasiswa Institut Teknologi Kalimantan (ITK) di Program Studi S-1 Teknik Informatika. Semasa menjadi mahasiswa ITK, penulis telah menyelesaikan Tugas Akhir berbentuk Proyek dengan judul ``PERANCANGAN ARSITEKTUR SISTEM PEMANTAUAN EMISI KENDARAAN TERINTEGRASI BERBASIS KOMPUTASI TEPI UNTUK KAWASAN PERKOTAAN''.
+}
+
+\makebackcoverandspine
+\end{document}

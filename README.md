@@ -4,114 +4,98 @@
 
 **Dari dokumen kosong menuju naskah Tugas Akhir yang siap diperiksa.**
 
-Template penulisan Tugas Akhir untuk mahasiswa **Institut Teknologi Kalimantan**.
+Template LaTeX untuk mahasiswa **Institut Teknologi Kalimantan (ITK)**.
 
 **Skripsi · Proyek · Prototipe · Artikel Ilmiah**
 
-[Mulai dalam 10 menit](#mulai-dari-sini) · [Pilih jenis TA](#pilih-jalur-tugas-akhir) · [Panduan pemula](PANDUAN_PEMULA.md)
+[Mulai dari sini](#mulai-dari-sini) · [Pilih jenis TA](#pilih-jalur-tugas-akhir) · [Panduan pemula](PANDUAN_PEMULA.md)
 
 </div>
 
 ---
 
-> [!IMPORTANT]
-> **Status pengembangan:** repository sedang dilengkapi. File sumber dan contoh PDF belum seluruhnya tersedia di GitHub. Tunggu hingga unggahan dan pengujian selesai sebelum menggunakan paket sebagai template final.
-
 ## Mulai dari sini
 
-**Anda tidak perlu menguasai LaTeX untuk mulai menulis.** Gunakan alur berikut setelah seluruh berkas template tersedia:
+Tidak perlu menguasai seluruh perintah LaTeX sebelum mulai menulis. **Target pertama: menghasilkan PDF dari template, lalu mengganti satu bagian dengan benar.**
 
-| Langkah | Yang dilakukan | Hasil yang diharapkan |
+| Langkah | Apa yang dilakukan | Hasil |
 | :--: | --- | --- |
-| **01** | Tentukan jalur TA pada tabel di bawah | Mengetahui file utama yang dipakai |
-| **02** | Unduh ZIP repository dan unggah ke [Overleaf](https://www.overleaf.com/) | Proyek LaTeX terbuka di browser |
-| **03** | Atur **Main document** ke file utama pilihan Anda | Kompilasi menggunakan format yang tepat |
-| **04** | Klik **Recompile** sebelum mengubah apa pun | PDF contoh pertama muncul |
-| **05** | Ganti identitas, judul, abstrak, dan isi bertahap | Naskah TA mulai terbentuk |
+| 01 | Pilih jenis TA | Mengetahui file utama |
+| 02 | Unggah ZIP ke [Overleaf](https://www.overleaf.com/) | Proyek terbuka |
+| 03 | Atur **Main document** | Template yang tepat aktif |
+| 04 | Klik **Recompile** | PDF pertama tampil |
+| 05 | Ganti identitas, judul, dan isi secara bertahap | Naskah mulai terbentuk |
 
-**Pertama kali menggunakan Overleaf?** Ikuti [panduan langkah demi langkah](PANDUAN_PEMULA.md).
+**Belum pernah menggunakan LaTeX?** Buka [Misi Pertama: Panduan Pemula](PANDUAN_PEMULA.md), dengan contoh dan checklist langkah demi langkah.
 
 ## Pilih jalur Tugas Akhir
 
-Satu repository, empat titik awal. Pilih **satu** file utama sesuai jenis dokumen yang Anda kerjakan.
-
-| Jalur | File yang dibuka | Kapan dipilih |
+| Jalur TA | File utama | Keterangan |
 | --- | --- | --- |
-| **Skripsi** | `main_skripsi.tex` | Ketika menyusun TA dalam format skripsi |
-| **Proyek** | `main_proyek.tex` | Ketika menyusun laporan TA berbasis proyek |
-| **Prototipe** | `main_prototipe.tex` | Ketika menyusun laporan TA berbasis prototipe |
-| **Artikel Ilmiah** | `main_artikel_ilmiah.tex` | Ketika menggunakan format TA artikel ilmiah |
+| **Skripsi** | `main_skripsi.tex` | Dokumen TA bentuk skripsi |
+| **Proyek** | `main_proyek.tex` | Dokumen TA bentuk proyek |
+| **Prototipe** | `main_prototipe.tex` | Dokumen TA bentuk prototipe |
+| **Artikel Ilmiah** | `main_artikel_ilmiah.tex` | Dokumen TA berbentuk artikel ilmiah |
 
-Penentuan jenis TA dan persyaratan akademiknya tetap mengikuti ketentuan program studi dan pedoman ITK yang berlaku.
+Untuk Skripsi, Proyek, dan Prototipe, class juga mendukung mode `proposal`, `revisiproposal`, dan `laporan`. Pilih sesuai tahap dokumen dan ketentuan ITK.
 
-## Kenali isi proyek dalam satu menit
+## Tiga kelompok file yang perlu Anda kenal
 
-Alih-alih menghafal semua file, kenali tiga kelompok ini:
-
-| Kelompok | File / folder | Perlakuan |
+| Kelompok | File | Yang Anda lakukan |
 | --- | --- | --- |
-| **Naskah Anda** | `main_*.tex` | **Edit** file yang sesuai jalur TA |
-| **Bahan naskah** | `referensi.bib`, `images/` | **Tambah dan sesuaikan** referensi atau gambar |
-| **Mesin format** | `itkta2025.cls`, `itkharvard.bst` | **Pertahankan**, kecuali ada perubahan format yang telah diverifikasi |
+| **Naskah** | `main_*.tex` | Edit sesuai jenis TA |
+| **Bahan** | `referensi.bib`, `images/` | Tambahkan referensi dan gambar |
+| **Format** | `itkta2025.cls`, `itkharvard.bst` | Jangan diubah sembarangan |
 
-Berkas lain dalam paket mencakup `compile.sh`, `sync_github.sh`, dokumentasi, dan contoh PDF. Skrip merupakan alat bantu opsional, bukan prasyarat bagi pengguna Overleaf.
+Paket juga menyediakan empat **contoh PDF**, skrip `compile.sh` dan `sync_github.sh`, serta dokumentasi. Skrip tidak wajib digunakan jika bekerja melalui Overleaf.
 
-## Dua cara bekerja
+## Dua cara mulai
 
-### Jalur A — Overleaf: untuk mulai tanpa instalasi
+### Tanpa instalasi: Overleaf
 
-1. Buka [Overleaf](https://www.overleaf.com/) dan masuk.
-2. Pilih **New Project → Upload Project**, kemudian unggah ZIP template.
-3. Pilih **Menu → Main document** sesuai jalur TA.
-4. Tekan **Recompile**.
-5. Edit naskah sedikit demi sedikit sambil memeriksa hasil PDF.
+1. Klik **Code → Download ZIP** di GitHub.
+2. Masuk ke [Overleaf](https://www.overleaf.com/).
+3. Pilih **New Project → Upload Project**.
+4. Unggah ZIP dan atur **Menu → Main document**.
+5. Klik **Recompile**.
 
-### Jalur B — Offline: untuk menulis di komputer sendiri
+### Offline: Windows 11
 
-Di Windows, instal [MiKTeX](https://miktex.org/download) dan [TeXstudio](https://www.texstudio.org/). Ekstrak paket, buka file utama, dan jalankan PDFLaTeX. Untuk memperbarui daftar pustaka berbasis BibTeX, gunakan urutan:
+1. Instal [MiKTeX](https://miktex.org/download) dan [TeXstudio](https://www.texstudio.org/).
+2. Ekstrak ZIP ke folder proyek.
+3. Buka file utama pilihan.
+4. Jalankan PDFLaTeX; untuk daftar pustaka gunakan **PDFLaTeX → BibTeX → PDFLaTeX → PDFLaTeX** bila diperlukan.
 
-```text
-PDFLaTeX → BibTeX → PDFLaTeX → PDFLaTeX
-```
+## Target pertama: PDF berhasil
 
-Pengguna Linux atau macOS dapat memakai distribusi TeX dan editor yang sesuai. Lihat [panduan pemula](PANDUAN_PEMULA.md) untuk pengenalan perintah dasar.
+- [ ] File utama sudah sesuai jalur TA.
+- [ ] Proyek berhasil dikompilasi.
+- [ ] Identitas dan judul dapat diganti.
+- [ ] Gambar tampil.
+- [ ] Sitasi dan daftar pustaka terbentuk.
+- [ ] PDF sesuai panduan resmi TA ITK yang berlaku.
 
-## Target pertama: PDF yang berhasil dibuat
+## Bila ada masalah
 
-Sebelum menulis banyak halaman, lakukan uji sederhana berikut:
-
-- [ ] File utama sudah sesuai jenis TA.
-- [ ] Proyek dapat dikompilasi tanpa error yang menghentikan proses.
-- [ ] Judul dan identitas contoh dapat diganti.
-- [ ] Gambar yang digunakan dapat ditemukan.
-- [ ] Sitasi dan daftar pustaka tampil setelah kompilasi yang sesuai.
-- [ ] Hasil PDF dibandingkan dengan panduan penulisan TA ITK yang berlaku.
-
-**Mengapa mulai dari PDF?** Jika proyek dasar sudah berhasil dikompilasi, kesalahan saat menulis berikutnya jauh lebih mudah dilacak.
-
-## Saat ada masalah, mulai dari gejalanya
-
-| Yang terlihat | Yang diperiksa terlebih dahulu |
+| Gejala | Periksa |
 | --- | --- |
-| PDF tidak muncul | Pesan error dan pilihan **Main document** |
-| `itkta2025.cls not found` | Apakah file class ikut berada di proyek? |
-| Gambar kosong / hilang | Path, ekstensi, dan kapitalisasi nama file |
-| Sitasi menjadi `?` | Kunci pada `referensi.bib` dan proses BibTeX |
-| Format halaman berubah | Apakah class atau pengaturan format ikut diedit? |
+| PDF tidak muncul | Log error dan pilihan Main document |
+| `itkta2025.cls not found` | Kelengkapan file proyek |
+| Gambar hilang | Path dan nama file di `images/` |
+| Sitasi `?` | Kunci di `referensi.bib` dan proses BibTeX |
+| Tata letak berubah | Perubahan pada class atau pengaturan format |
 
-Jangan mengubah file class hanya untuk menghilangkan error sebelum mengetahui penyebabnya.
+Penjelasan dan contoh lebih lengkap tersedia di [PANDUAN_PEMULA.md](PANDUAN_PEMULA.md).
 
-## Contoh keluaran
+## Contoh hasil
 
-Paket sumber disiapkan dengan contoh PDF untuk keempat jenis TA. Setelah seluruh berkas tersedia di repository, contoh tersebut dapat digunakan sebagai pembanding visual hasil kompilasi.
+Buka contoh PDF yang tersedia dalam repository untuk membandingkan hasil kompilasi Skripsi, Proyek, Prototipe, dan Artikel Ilmiah. Contoh adalah bahan latihan, bukan naskah yang siap diserahkan.
 
-## Untuk pembimbing dan kontributor
+## Kontribusi dan acuan
 
-Masukan perbaikan, laporan kesalahan, dan usulan dokumentasi dapat diajukan melalui **GitHub Issues**. Saat melaporkan masalah kompilasi, sertakan jenis TA, sistem operasi atau editor, serta pesan error yang relevan. Hindari menyertakan naskah mahasiswa atau informasi pribadi yang tidak perlu.
+Laporkan kesalahan melalui GitHub Issues dengan menyebutkan jenis TA, sistem operasi/editor, dan pesan error. Hindari mengunggah data pribadi atau naskah mahasiswa yang belum layak dipublikasikan.
 
-### Ruang lingkup dan acuan
-
-Repository ini adalah **alat bantu penulisan**, bukan pernyataan bahwa template telah disahkan secara institusional. Penggunaan dan penilaian dokumen mengikuti **pedoman resmi Tugas Akhir Institut Teknologi Kalimantan** dan ketentuan program studi yang berlaku.
+Template ini adalah **alat bantu penulisan** yang disusun mengacu pada panduan TA ITK 2025, **bukan pernyataan pengesahan institusional**. Apabila ada perbedaan, ikuti pedoman resmi ITK yang berlaku.
 
 ---
 
@@ -119,6 +103,6 @@ Repository ini adalah **alat bantu penulisan**, bukan pernyataan bahwa template 
 
 **Mulai dari satu halaman. Pastikan PDF berhasil. Lanjutkan menulis Tugas Akhir Anda.**
 
-[**Panduan untuk pemula**](PANDUAN_PEMULA.md)
+[Panduan Pemula](PANDUAN_PEMULA.md)
 
 </div>

@@ -1,0 +1,161 @@
+%% ============================================================================
+%% main_artikel_ilmiah.tex
+%% Template Artikel Ilmiah Tugas Akhir Institut Teknologi Kalimantan (ITK)
+%% Mengacu pada Bab IV (Hal. 17-21) SK Rektor ITK No. 6887/IT10/AK.07/2025
+%% ============================================================================
+\documentclass[a4paper,12pt,twoside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[indonesian]{babel}
+\usepackage{mathptmx} % Times New Roman 12pt
+\usepackage[
+  a4paper,
+  twoside,
+  inner=4cm,
+  outer=3cm,
+  top=3cm,
+  bottom=3cm,
+  footskip=1.5cm
+]{geometry}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{amsmath,amssymb}
+\usepackage[round,authoryear,sort]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\onehalfspacing
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{0pt}
+\bibpunct{(}{)}{;}{a}{,}{,}
+\setlength{\bibhang}{1.27cm}
+\setlength{\bibsep}{6pt}
+
+\captionsetup{
+  font={normalsize,singlespacing},
+  labelfont={bf},
+  justification=centering
+}
+\captionsetup[table]{position=top, skip=6pt}
+\captionsetup[figure]{position=bottom, skip=6pt}
+
+\addto\captionsindonesian{%
+  \renewcommand{\figurename}{Gambar}%
+  \renewcommand{\tablename}{Tabel}%
+  \renewcommand{\refname}{DAFTAR PUSTAKA}%
+}
+
+\begin{document}
+
+% ============================================================================
+% 4.1 JUDUL & 4.2 IDENTITAS PENULIS (Bab 4 Hal. 18-19 Panduan TA ITK 2025)
+% ============================================================================
+\begin{center}
+  \singlespacing
+  {\fontsize{14pt}{18pt}\selectfont\bfseries
+  OPTIMASI PROSES DISTILASI FRAKSINASI VAKUM DAN KRISTALISASI \textit{PATCHOULI ALCOHOL} DARI MINYAK NILAM (\textit{Pogostemon cablin})\par}
+  \vspace{12pt}
+
+  {\fontsize{12pt}{14pt}\selectfont\bfseries
+  Nama Mahasiswa$^1$, Nama Pembimbing Utama$^{2*}$, Nama Pembimbing Pendamping$^3$\par}
+  \vspace{12pt}
+
+  {\fontsize{10pt}{13pt}\selectfont
+  $^{1,2,3}$Program Studi Teknik Kimia, Fakultas Rekayasa dan Teknologi Industri, Institut Teknologi Kalimantan\\
+  Jalan Soekarno-Hatta KM. 15, Karang Joang, Balikpapan 76127\par}
+  \vspace{12pt}
+
+  {\fontsize{10pt}{13pt}\selectfont
+  Diterima: 10 Agustus 2025 / Disetujui: 20 Oktober 2025\\
+  *Korespondensi: pembimbing.utama@lecturer.itk.ac.id\par}
+\end{center}
+\vspace{10pt}
+
+% ============================================================================
+% ABSTRAK ARTIKEL ILMIAH (Spasi 1, 200-250 kata)
+% ============================================================================
+\noindent\textbf{ABSTRAK}\par
+\vspace{4pt}
+\begingroup
+\singlespacing\noindent
+Abstrak artikel ilmiah memuat latar belakang singkat, permasalahan, tujuan penelitian, metode penelitian yang digunakan, hasil utama yang diperoleh, serta kesimpulan. Penulisan abstrak dilakukan dalam satu paragraf menggunakan huruf Times New Roman 12 poin dengan jarak baris satu spasi (\textit{single spacing}). Setiap istilah bahasa asing atau nama ilmiah dicetak miring (\textit{italic}). Penelitian ini bertujuan untuk menentukan kondisi operasi optimal pada proses pemurnian minyak nilam melalui tahapan distilasi fraksinasi vakum yang dilanjutkan dengan kristalisasi pendinginan terkontrol. Variasi kecepatan pengadukan diatur pada 40 rpm, 50 rpm, dan 60 rpm. Hasil pengujian menunjukkan bahwa kecepatan pengadukan 60 rpm menghasilkan distribusi ukuran kristal \textit{patchouli alcohol} yang bersifat \textit{unimodal} dengan tingkat kemurnian mencapai 99\%.\par
+\vspace{6pt}
+\noindent\textbf{Kata kunci}: distilasi fraksinasi vakum, kristalisasi, minyak nilam, \textit{patchouli alcohol}
+\endgroup
+\vspace{14pt}
+
+% ============================================================================
+% 4.3 PENDAHULUAN
+% ============================================================================
+\section*{PENDAHULUAN}
+Pada bagian pendahuluan diuraikan alasan pemilihan judul artikel, argumentasi ilmiah, serta fokus permasalahan yang diteliti beserta batasan masalahnya \citep{harunsyah2021, alzoubi2023}. Minyak nilam merupakan salah satu komoditas minyak atsiri unggulan yang memiliki kandungan utama berupa senyawa seskuiterpen alkohol yaitu \textit{patchouli alcohol} \citep{isfaroiny2005, bhatia2008}.
+
+Tujuan penelitian ini adalah menentukan pengaruh kecepatan pengadukan dan suhu operasi terhadap kemurnian serta distribusi ukuran kristal (\textit{crystal size distribution}) yang dihasilkan. Hasil penelitian ini diharapkan memberikan manfaat praktis bagi industri pengolahan minyak atsiri nasional dalam meningkatkan mutu dan nilai tambah produk turunan minyak nilam. Hipotesis pada penelitian kuantitatif ini adalah peningkatan kecepatan pengadukan hingga batas kritis akan mempercepat transfer massa dan menghasilkan distribusi ukuran kristal yang lebih seragam (\textit{unimodal}).
+
+% ============================================================================
+% 4.4 TINJAUAN PUSTAKA / KAJIAN TEORI
+% ============================================================================
+\section*{TINJAUAN PUSTAKA}
+Proses kristalisasi dari larutan terdiri atas tiga tahapan utama, yakni pencapaian kondisi lewat jenuh (\textit{supersaturation}), pembentukan inti kristal (\textit{nucleation}), dan pertumbuhan kristal (\textit{crystal growth}) \citep{mersmann2001a, mullin2001, jones2002}. Gaya dorong (\textit{driving force}) supersaturasi dinyatakan melalui selisih konsentrasi larutan aktual ($c$) terhadap konsentrasi kesetimbangan jenuhnya ($c^*$) sebagaimana ditunjukkan pada Persamaan~(\ref{eq:art_super}) \citep{schwartz2002, tung2009}:
+\begin{equation}
+  \Delta c = c - c^*
+  \label{eq:art_super}
+\end{equation}
+
+Berbagai metode pemisahan dan pemurnian \textit{patchouli alcohol} telah dikaji pada penelitian terdahulu, antara lain menggunakan kromatografi partisi sentrifugal kinerja tinggi \citep{li2021}, inklusi \textit{host-guest} \citep{tong2022}, serta kombinasi distilasi fraksinasi vakum dan kristalisasi pendinginan \citep{su2014}.
+
+% ============================================================================
+% 4.5 METODOLOGI
+% ============================================================================
+\section*{METODOLOGI}
+Penelitian dilaksanakan secara eksperimental di laboratorium menggunakan bahan baku minyak nilam kasar (\textit{crude patchouli oil}) dengan kadar awal \textit{patchouli alcohol} sebesar 32,4\% \citep{aisyah2010}. Tahap pertama adalah distilasi fraksinasi vakum pada tekanan 10 mmHg untuk memisahkan fraksi ringan terpene dari fraksi berat yang kaya akan \textit{patchouli alcohol} \citep{mamun2008, yudisthira2009}. Tahap kedua adalah proses kristalisasi pendinginan pada suhu $10^\circ\text{C}$ dengan variasi kecepatan pengadukan mekanis sebesar 40 rpm, 50 rpm, dan 60 rpm selama 6 jam \citep{widiyanto2010, osullivan2012}.
+
+% ============================================================================
+% 4.6 HASIL DAN PEMBAHASAN
+% ============================================================================
+\section*{HASIL DAN PEMBAHASAN}
+Berdasarkan hasil pengujian kromatografi gas dan analisis gravimetri, perbandingan perolehan (\textit{yield}) serta kemurnian (\textit{purity}) kristal \textit{patchouli alcohol} terhadap beberapa metode pemisahan disajikan pada Tabel~\ref{tab:art_yield}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Perbandingan Yield dan Kemurnian Kristal PA pada Berbagai Metode Separasi}
+  \label{tab:art_yield}
+  \begin{singlespace}
+  \begin{tabularx}{\textwidth}{@{} l >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+    \toprule
+    \textbf{Parameter} & \textbf{HPCPC \citep{li2021}} & \textbf{Host-Guest \citep{tong2022}} & \textbf{Distilasi--Kristalisasi (Studi Ini)} \\
+    \midrule
+    Yield (\%)  & 16,0 & 17,0 & 52,9 \\
+    Purity (\%) & 98,0 & 44,0 & 99,0 \\
+    \bottomrule
+  \end{tabularx}
+  \end{singlespace}
+\end{table}
+
+Peningkatan kecepatan pengadukan dari 40 rpm menjadi 60 rpm terbukti menghasilkan distribusi ukuran kristal yang semakin sempit dan seragam (\textit{unimodal}), karena homogenitas suhu dan konsentrasi larutan di dalam kristalisator terjaga dengan lebih baik.
+
+% ============================================================================
+% KESIMPULAN
+% ============================================================================
+\section*{KESIMPULAN}
+Kombinasi proses distilasi fraksinasi vakum dan kristalisasi pendinginan pada kecepatan pengadukan 60 rpm mampu menghasilkan kristal \textit{patchouli alcohol} dengan kemurnian mencapai 99,0\% dan perolehan (\textit{yield}) sebesar 52,9\%.
+
+% ============================================================================
+% 4.7 ACKNOWLEDGEMENTS
+% ============================================================================
+\section*{ACKNOWLEDGEMENTS}
+Penulis menyampaikan ucapan terima kasih kepada Laboratorium Terpadu Institut Teknologi Kalimantan atas dukungan fasilitas instrumen pengujian selama pelaksanaan penelitian Tugas Akhir ini.
+
+% ============================================================================
+% 4.8 DAFTAR PUSTAKA / REFERENSI
+% ============================================================================
+\begin{singlespace}
+  \bibliographystyle{itkharvard}
+  \bibliography{referensi}
+\end{singlespace}
+
+\end{document}
