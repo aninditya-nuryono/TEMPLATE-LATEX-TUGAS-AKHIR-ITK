@@ -4,7 +4,7 @@ Repository ini berisi template LaTeX untuk penulisan Tugas Akhir di **Institut T
 
 Template ini disiapkan agar mahasiswa tidak perlu mengatur format dokumen dari awal. Anda bisa lebih fokus pada isi Tugas Akhir, sementara pengaturan halaman dan beberapa bagian dokumen sudah ditangani oleh template.
 
-Jika baru pertama kali menggunakan LaTeX, silakan baca [Panduan Penggunaan untuk Pemula](PANDUAN_PEMULA.md).
+Jika baru pertama kali menggunakan LaTeX, silakan baca [Panduan Penggunaan](PANDUAN_PENGGUNAAN.md).
 
 ## Pilih template sesuai jenis Tugas Akhir
 
@@ -42,7 +42,7 @@ Untuk Windows, Anda dapat menggunakan [MiKTeX](https://miktex.org/download) dan 
 | `images/` | Menyimpan gambar yang digunakan dalam dokumen |
 | `itkta2025.cls` | Mengatur format dokumen; sebaiknya tidak diubah untuk penulisan biasa |
 | `itkharvard.bst` | Mengatur format daftar pustaka |
-| `PANDUAN_PEMULA.md` | Petunjuk penggunaan beserta contoh kode |
+| `PANDUAN_PENGGUNAAN.md` | Petunjuk penggunaan beserta contoh kode |
 
 ## Hal yang perlu diperiksa sebelum menulis
 
@@ -60,7 +60,7 @@ Untuk Skripsi, Proyek, dan Prototipe, tersedia pilihan tahap dokumen seperti `pr
 | Sitasi menjadi `?` | Periksa kunci referensi di `referensi.bib`, lalu kompilasi ulang |
 | Tampilan dokumen berubah | Periksa apakah ada pengaturan di file class yang ikut diubah |
 
-Penjelasan yang lebih rinci, termasuk cara menambahkan tabel, gambar, persamaan, dan sitasi, tersedia dalam [panduan pemula](PANDUAN_PEMULA.md).
+Penjelasan yang lebih rinci, termasuk cara menambahkan tabel, gambar, persamaan, dan sitasi, tersedia dalam [panduan penggunaan](PANDUAN_PENGGUNAAN.md).
 
 ## Masukan dan perbaikan
 
