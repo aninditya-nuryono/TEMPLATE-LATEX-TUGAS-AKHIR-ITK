@@ -21,7 +21,7 @@ Cukup gunakan satu file utama sesuai jenis Tugas Akhir Anda. Ketentuan mengenai 
 
 ## Cara menggunakan template
 
-**Menggunakan Overleaf**
+**Menggunakan Overleaf (online)**
 
 1. Klik **Code → Download ZIP** pada halaman repository ini.
 2. Buka [Overleaf](https://www.overleaf.com/), lalu masuk ke akun Anda.
@@ -29,7 +29,7 @@ Cukup gunakan satu file utama sesuai jenis Tugas Akhir Anda. Ketentuan mengenai 
 4. Buka **Menu → Main document**, lalu pilih file `.tex` sesuai jenis Tugas Akhir.
 5. Klik **Recompile**. 
 
-**Menggunakan komputer sendiri**
+**Menggunakan komputer sendiri (local)**
 
 Untuk Windows, Anda dapat menggunakan [MiKTeX](https://miktex.org/download) dan [TeXstudio](https://www.texstudio.org/). Setelah keduanya terpasang, ekstrak ZIP, buka file utama, lalu kompilasi menggunakan PDFLaTeX. Jika daftar pustaka belum muncul atau belum diperbarui, jalankan urutan PDFLaTeX → BibTeX → PDFLaTeX → PDFLaTeX.
 
