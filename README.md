@@ -1,6 +1,6 @@
 # Template LaTeX Tugas Akhir Institut Teknologi Kalimantan (ITK)
 
-Template LaTeX untuk membantu mahasiswa menyiapkan dokumen Tugas Akhir secara konsisten. Repository ini menyediakan pilihan dokumen **Skripsi, Proyek, Prototipe, dan Artikel Ilmiah**.
+Repository template LaTeX Tugas Akhir Institut Teknologi Kalimantan (ITK) untuk membantu mahasiswa menulis, menyunting, dan menyusun dokumen secara konsisten. Paket ini mencakup pilihan **Skripsi, Proyek, Prototipe, dan Artikel Ilmiah**.
 
 > **Status repository: dalam proses pelengkapan.** Berkas sumber dan contoh PDF belum semuanya tersedia di GitHub. Jangan menganggap repository ini siap dipakai sebelum semua berkas diunggah dan diuji.
 
@@ -92,12 +92,13 @@ Untuk Linux dan macOS, gunakan distribusi TeX yang sesuai serta editor LaTeX pil
 | Sitasi bertanda `?` | Periksa kunci referensi dan jalankan BibTeX |
 | Format berbeda | Periksa perubahan pada class dan bandingkan dengan panduan ITK |
 
+## Contoh hasil dokumen
+
+Paket sumber menyediakan contoh PDF untuk masing-masing jenis Tugas Akhir. Setelah seluruh berkas diunggah, mahasiswa dapat membuka contoh tersebut untuk membandingkan hasil kompilasi dengan dokumen yang sedang dikerjakan. Selalu periksa kesesuaian hasil dengan pedoman penulisan TA ITK yang berlaku.
+
 ## Kontribusi dan status
 
 Perbaikan dokumentasi, laporan kesalahan, dan usulan penyempurnaan dapat diajukan melalui GitHub Issues. Perubahan format akademik perlu diverifikasi terhadap pedoman resmi yang berlaku.
 
 Repository ini **bukan pernyataan pengesahan resmi institusi**. Template disusun sebagai alat bantu mengacu pada panduan penulisan TA ITK 2025. Apabila ada perbedaan, pedoman resmi ITK yang berlaku menjadi acuan utama.
 
-### Referensi dokumentasi
-
-Penyusunan README ini mengambil inspirasi dari kelengkapan dokumentasi [Template LaTeX Tugas Akhir Sarjana Terapan UNY](https://github.com/2black0/Template-LaTeX-Tugas-Akhir-Sarjana-Terapan-UNY), khususnya alur pemula, struktur proyek, dan troubleshooting. Isi dan berkas template tetap disesuaikan dengan kebutuhan ITK; tidak dimaksudkan sebagai salinan template UNY.
