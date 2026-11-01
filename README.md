@@ -42,11 +42,9 @@ Untuk Windows, Anda dapat menggunakan [MiKTeX](https://miktex.org/download) dan 
 | `itkharvard.bst` | Mengatur format daftar pustaka |
 | `PANDUAN_PEMULA.md` | Petunjuk penggunaan beserta contoh kode |
 
-Repository ini juga dilengkapi contoh PDF untuk keempat jenis Tugas Akhir. Anda dapat membukanya untuk melihat gambaran hasil dokumen sebelum mulai mengedit.
-
 ## Hal yang perlu diperiksa sebelum menulis
 
-Pastikan file utama yang dipilih sudah benar dan PDF contoh berhasil dibuat. Setelah itu, coba ganti judul atau nama mahasiswa, lalu kompilasi kembali. Cara ini membantu memastikan proyek sudah berjalan dengan baik sebelum Anda mengubah banyak bagian sekaligus.
+Pastikan file utama yang dipilih sudah benar dan proses kompilasi berhasil menghasilkan PDF. Setelah itu, coba ganti judul atau nama mahasiswa, lalu kompilasi kembali. Cara ini membantu memastikan proyek sudah berjalan dengan baik sebelum Anda mengubah banyak bagian sekaligus.
 
 Untuk Skripsi, Proyek, dan Prototipe, tersedia pilihan tahap dokumen seperti `proposal`, `revisiproposal`, dan `laporan`. Pengaturannya ada pada perintah `\documentclass` di bagian awal file utama. Sesuaikan dengan dokumen yang sedang dikerjakan.
 
